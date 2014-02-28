@@ -19,7 +19,8 @@ Load some MS output, do nothing, and print it out in MS format:
 		import sys
 
     ms = msReader(sys.stdin)
-		sys.stdout.write(ms.header) # return ms header
+    sys.stdout.write(ms.header) # return ms header
+
     for rep in ms:
 			sys.stdout.write(str(rep)) # print works too, but adds spaces
 
