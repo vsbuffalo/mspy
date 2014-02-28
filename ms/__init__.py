@@ -73,7 +73,7 @@ class MSReader(object):
         the command and seeds).
         """
         # trailing space after command follows MS.
-        return "%s \n%s" % (ms.command, ' '.join(map(str, ms.seeds)))
+        return "%s \n%s\n" % (ms.command, ' '.join(map(str, ms.seeds)))
 
 if __name__ == "__main__":
     # as a test, this just returns the exact MS
@@ -83,6 +83,6 @@ if __name__ == "__main__":
     else:
         fh = open(sys.argv[1], 'r')
     ms = MSReader(fh)
-    print ms.header
+    sys.stdout.write(ms.header)
     for rep in ms:
         sys.stdout.write(str(rep))
